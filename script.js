@@ -6,6 +6,10 @@ function loadMap(h, w, m)
     width = w;
     map = m;
     var game = document.getElementById("game");
+    while (game.firstChild)
+    {
+        game.removeChild(game.firstChild);
+    }
     for(var i = 0; i < h; i++)
     {
         var tr = document.createElement("TR");
