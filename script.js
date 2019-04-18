@@ -1,6 +1,22 @@
+var height, width, map;
+
 function loadMap(h, w, m)
 {
-    alert("Hello World!");
+    height = h;
+    width = w;
+    map = m;
+    var game = document.getElementById("game");
+    for(var i = 0; i < h; i++)
+    {
+        var tr = document.createElement("TR");
+        for(var j = 0; j < w; j++)
+        {
+            var td = document.createElement("TD");
+            td.innerText = m.charAt(i * w + j);
+            tr.appendChild(td);
+        }
+        game.appendChild(tr);
+    }
 }
 
 function requestLoadMap(h, w, m)
