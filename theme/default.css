@@ -2,12 +2,14 @@
 
 #game
 {
-    border-spacing: 2px;
+	border-spacing: 2px;
+	box-sizing: border-box;
+	padding: 16px;
 }
 
 #game td.unknown
 {
-    background: #bbff88;
+	background: #bbff88;
 	width: 28px;
 	height: 28px;
 	border: 1px solid #000000;
