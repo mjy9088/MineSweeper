@@ -2,7 +2,7 @@
 
 #game
 {
-    cell-spacing: 2px;
+    border-spacing: 2px;
 }
 
 #game td.unknown
