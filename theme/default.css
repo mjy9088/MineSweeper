@@ -11,5 +11,52 @@
 	width: 28px;
 	height: 28px;
 	border: 1px solid #000000;
+	text-align: center;
+	font-weight: 900;
 }
 
+#game td.mine
+{
+	background: #557744;
+}
+
+#game td.n1::after
+{
+	content: "1";
+	color: #0000FF;
+}
+#game td.n2::after
+{
+	content: "2";
+	color: #002200;
+}
+#game td.n3::after
+{
+	content: "3";
+	color: #BB0000;
+}
+#game td.n4::after
+{
+	content: "4";
+	color: #000088;
+}
+#game td.n5::after
+{
+	content: "5";
+	color: #550000;
+}
+#game td.n6::after
+{
+	content: "6";
+	color: #8888FF;
+}
+#game td.n7::after
+{
+	content: "7";
+	color: #222222;
+}
+#game td.n8::after
+{
+	content: "8";
+	color: #000000;
+}

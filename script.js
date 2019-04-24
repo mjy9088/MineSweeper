@@ -10,6 +10,7 @@ function loadMap(h, w, m)
     {
         game.removeChild(game.firstChild);
     }
+    var dir =  [[1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1], [0, 1]];
     for(var i = 0; i < h; i++)
     {
         var tr = document.createElement("TR");
@@ -17,7 +18,22 @@ function loadMap(h, w, m)
         {
             var td = document.createElement("TD");
 			var mine = m.charAt(i * w + j);
-            td.innerText = mine;
+            var n = 0;
+            for(var k = 0; k < 8; k++)
+            {
+                if(i + dir[k][0] >= 0 && i + dir[k][0] < h && j + dir[k][1] >= 0 && j + dir[k][1] < w && m.charAt((i + dir[k][0]) * w + j + dir[k][1]) == "1")
+                {
+                    n++;
+                }
+            }
+            if(mine == "1")
+            {
+                td.classList.add("mine");
+            }
+            else
+            {
+                td.classList.add("n" + n);
+            }
 			td.classList.add("unknown");
             tr.appendChild(td);
         }
