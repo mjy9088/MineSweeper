@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+#game
+{
+    cell-spacing: 2px;
+}
+
+#game td.unknown
+{
+    background: #bbff88;
+	width: 28px;
+	height: 28px;
+	border: 1px solid #000000;
+}
+

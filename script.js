@@ -16,7 +16,9 @@ function loadMap(h, w, m)
         for(var j = 0; j < w; j++)
         {
             var td = document.createElement("TD");
-            td.innerText = m.charAt(i * w + j);
+			var mine = m.charAt(i * w + j);
+            td.innerText = mine;
+			td.classList.add("unknown");
             tr.appendChild(td);
         }
         game.appendChild(tr);
@@ -35,3 +37,23 @@ function test()
     document.getElementsByTagName("BODY")[0].appendChild(map);
     map.parentElement.removeChild(map);
 }
+
+var theme;
+
+function setTheme(src)
+{
+	theme.parentElement.removeChild(theme);
+	theme = document.createElement("LINK");
+	theme.rel = "stylesheet";
+	theme.href = src;
+	document.getElementsByTagName("HEAD")[0].appendChild(theme);
+}
+
+window.addEventListener("load", function ()
+{
+	theme = document.createElement("LINK");
+	theme.rel = "stylesheet";
+	theme.href = "theme/default.css";
+	document.getElementsByTagName("HEAD")[0].appendChild(theme);
+});
+
