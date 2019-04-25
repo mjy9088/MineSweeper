@@ -7,7 +7,13 @@
 	padding: 16px;
 }
 
-#game td.unknown
+#game td.known
+{
+	font-size: 12px;
+	background: #88BB66;
+}
+
+#game td
 {
 	background: #bbff88;
 	width: 28px;
@@ -17,47 +23,47 @@
 	font-weight: 900;
 }
 
-#game td.mine
+#game td.flag
 {
 	background: #557744;
 }
 
-#game td.n1::after
+#game td.known.n1::after
 {
 	content: "1";
 	color: #0000FF;
 }
-#game td.n2::after
+#game td.known.n2::after
 {
 	content: "2";
 	color: #002200;
 }
-#game td.n3::after
+#game td.known.n3::after
 {
 	content: "3";
 	color: #BB0000;
 }
-#game td.n4::after
+#game td.known.n4::after
 {
 	content: "4";
 	color: #000088;
 }
-#game td.n5::after
+#game td.known.n5::after
 {
 	content: "5";
 	color: #550000;
 }
-#game td.n6::after
+#game td.known.n6::after
 {
 	content: "6";
 	color: #8888FF;
 }
-#game td.n7::after
+#game td.known.n7::after
 {
 	content: "7";
 	color: #222222;
 }
-#game td.n8::after
+#game td.known.n8::after
 {
 	content: "8";
 	color: #000000;

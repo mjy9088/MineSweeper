@@ -1,4 +1,4 @@
-var height, width, map;
+var height, width, map, tds;
 
 function loadMap(h, w, m)
 {
@@ -11,12 +11,19 @@ function loadMap(h, w, m)
         game.removeChild(game.firstChild);
     }
     var dir =  [[1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1], [0, 1]];
+	function getListener(x, y)
+	{
+		return function () { return onClickTile(x, y); };
+	}
+	tds = [];
     for(var i = 0; i < h; i++)
     {
         var tr = document.createElement("TR");
+		var tmp = [];
         for(var j = 0; j < w; j++)
         {
             var td = document.createElement("TD");
+			td.addEventListener("click", getListener(j, i));
 			var mine = m.charAt(i * w + j);
             var n = 0;
             for(var k = 0; k < 8; k++)
@@ -34,11 +41,13 @@ function loadMap(h, w, m)
             {
                 td.classList.add("n" + n);
             }
-			td.classList.add("unknown");
             tr.appendChild(td);
+			tmp.push(td);
         }
         game.appendChild(tr);
+		tds.push(tmp);
     }
+	onStartGame(w, h, m);
 }
 
 function requestLoadMap(h, w, m)
@@ -52,6 +61,7 @@ function test()
     map.src = "sample/map0.js";
     document.getElementsByTagName("BODY")[0].appendChild(map);
     map.parentElement.removeChild(map);
+	document.getElementById("noti").style.display = "none";
 }
 
 var theme;
