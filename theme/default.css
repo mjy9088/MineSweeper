@@ -2,7 +2,6 @@
 
 #game
 {
-	border-spacing: 2px;
 	box-sizing: border-box;
 	padding: 16px;
 }
@@ -68,3 +67,15 @@
 	content: "8";
 	color: #000000;
 }
+
+#game td.known.mine
+{
+	background: #446633;
+}
+
+#game td.known.mine::after
+{
+	content: "X";
+	color: #440088;
+}
+
